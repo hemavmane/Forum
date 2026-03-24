@@ -16,3 +16,12 @@ postModel.belongsTo(userModel, { foreignKey: "userId" })
 
 postModel.hasMany(replyModel, { foreignKey: "postId", onDelete: "CASCADE" })
 replyModel.belongsTo(postModel, { foreignKey: "postId" })
+
+userModel.hasMany(replyModel, { foreignKey: "userId", onDelete: "CASCADE" })
+replyModel.belongsTo(userModel, { foreignKey: "userId" })
+
+module.exports = {
+    sequelize,
+    Sequelize,
+    userModel, postModel, replyModel
+}
