@@ -1,35 +1,23 @@
-import { useEffect, useState } from "react";
-import API from "../services/api";
-import "./post.css"
+import React from "react";
 
-import { Link } from "react-router-dom";
-
-export default function Posts() {
-   
-
+const Posts = () => {
     return (
-        <div className="container mt-4">
-            <h3>Posts</h3>
+        <div>
+            <button>Create Post</button>
 
-            <div className="posts-container">
-                <h3 className="posts-title">Posts</h3>
-
-                <input
-                    className="post-input"
-                    placeholder="title"
-                />
-
-                <textarea
-                    className="post-textarea"
-                    placeholder="body"
-                />
-
-                <button className="post-btn">
-                    Add Post
-                </button>
+            <div>
+                <h3>Post Title</h3>
+                <p>Post content preview...</p>
+                <small>By Hema • 2 hours ago</small>
             </div>
 
-           
+            <div>
+                <h3>Another Post</h3>
+                <p>Another content...</p>
+                <small>By User • 1 day ago</small>
+            </div>
         </div>
     );
-}
+};
+
+export default Posts;

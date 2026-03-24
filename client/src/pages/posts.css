@@ -1,0 +1,92 @@
+
+.create-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 20px auto;
+  border: 1px solid #e5e7eb;
+}
+.media{
+  display: none;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: #f3f4f6;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.tabs button.active {
+  background: #557cfa;
+  color: #fff;
+}
+
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+
+.submit-btn {
+  background: #557cfa;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+.upload-box {
+  border: 2px dashed #d1d5db;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  background: #f9fafb;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.upload-box:hover {
+  border-color: #4f46e5;
+  background: #eef2ff;
+}
+
+
+.file-input {
+  display: none;
+}
+
+
+.upload-label {
+  cursor: pointer;
+}
+
+
+.upload-icon {
+  font-size: 40px;
+  color: #4f46e5;
+  margin-bottom: 10px;
+}
+
+
+.upload-label p {
+  font-size: 14px;
+  color: #555;
+}

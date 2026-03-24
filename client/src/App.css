@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f5f7fb;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.main {
+    flex: 1;
+    padding: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+.header {
+    background: #557cfa;
+    color: white;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    opacity: 0.8;
+}
+
+
+.footer {
+    background: #111827;
+    color: #ccc;
+    text-align: center;
+    padding: 14px;
+    font-size: 13px;
+}
+
+/* ===== MAIN WRAPPER ===== */
+.home {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+/* ===== CREATE POST ===== */
+.create-post {
+  background: #fff;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #050717;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-post button {
+  background: #557cfa;
+  color: #050717;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ===== CONTENT LAYOUT ===== */
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+/* ===== POSTS ===== */
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.post-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  transition: 0.2s;
+}
+
+.post-card:hover {
+  border-color: #4f46e5;
+}
+
+.post-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.post-content {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.post-meta {
+  font-size: 12px;
+  color: #888;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar-box {
+  background: #fff;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.sidebar-box h4 {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
