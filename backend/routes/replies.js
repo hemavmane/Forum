@@ -1,8 +1,14 @@
-const authController = require("../controller/Replies")
-const express = require("express")
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
+const auth = require("../middleware/auth");
+const replyController = require("../controller/Replies");
 
 
-router.post("/reply",authController.Create)
-router.post("/:id",authController.getDataById)
-module.exports = router
+router.post("/create", auth, replyController.Create);
+
+router.get("/getbyid/:id", replyController.getDataById);
+router.get("/getdata", replyController.getAll);
+router.put("/update/:id", auth, replyController.update);
+router.post("/trash/:id", auth, replyController.delete);
+
+module.exports = router;

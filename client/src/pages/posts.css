@@ -10,7 +10,13 @@
 .media{
   display: none;
 }
-
+.create-btn{
+  text-decoration: none;
+  color: white;
+  background-color: #557cfa;
+  padding: 10px;
+  border-radius: 5px 4px;
+}
 .tabs {
   display: flex;
   gap: 10px;

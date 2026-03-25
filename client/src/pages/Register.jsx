@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import ServiceProvider from "../services/api";
 import { useNavigate } from "react-router-dom";
 import SuccessModal from "../hooks/success";
-import { useDispatch } from "react-redux";
-import { loginSuccess } from "../redux/authSlice";
 
-const Login = () => {
+const Register = () => {
     const initialState = {
+        username: "",
         email: "",
         password: ""
     }
@@ -15,8 +14,9 @@ const Login = () => {
         message: "",
         type: "success"
     });
-const dispatch = useDispatch();
-    const navigate = useNavigate()
+
+
+    const navigate = useNavigate();
     const [data, setData] = useState(initialState)
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -24,21 +24,23 @@ const dispatch = useDispatch();
             ...prev, [name]: value
         }))
     }
+
+
     const handleSubmit = async () => {
         try {
-            const res = await ServiceProvider.createData(data, "auth/login");
+            const res = await ServiceProvider.createData(data, "auth/register");
 
             if (res.success == true) {
-          
+             
                 setModal({
                     show: true,
                     message: res.message,
                     type: "success"
                 });
+
                 setTimeout(() => {
-                    navigate("/");
+                    navigate("/login");
                 }, 1500);
-                dispatch(loginSuccess(res)); 
             } else {
 
                 setModal({
@@ -58,22 +60,26 @@ const dispatch = useDispatch();
     };
     return (
         <div className="login-outer">
-            <div className="login-container">
-                <h4>Login</h4>
-                <input className="input" name="email" type="text" placeholder="email" value={data.email} onChange={handleChange} />
-                <input className="input" name="password" type="password" placeholder="password" value={data.password} onChange={handleChange} />
-                <div className="text-center">
-                    <button className="submit-btn mt-3  me-2 text-center m-auto" onClick={handleSubmit}>Login</button>
-                </div>
-
+            <div className="login-container" >
+                <h4>Create account</h4>
+                <input name="username" className="input" placeholder="username" type="text" value={data.username} onChange={handleChange} />
+                <input name="email" className="input" placeholder="email" type="text" value={data.email} onChange={handleChange} />
+                <input name="password" className="input" placeholder="password" type="password" value={data.password} onChange={handleChange} />
+                <button className="submit-btn mt-3  me-2 text-center m-auto" onClick={handleSubmit}>sign Up</button>
             </div>
             <SuccessModal
                 show={modal.show}
                 message={modal.message}
                 type={modal.type}
-                onClose={() => setModal({ ...modal, show: false })}
+                onClose={() => {
+                    setModal({ ...modal, show: false });
+
+                    if (modal.type === "success") {
+                        navigate("/login");
+                    }
+                }}
             />
         </div>
     )
 }
-export default Login
+export default Register

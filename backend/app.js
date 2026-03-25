@@ -2,11 +2,17 @@ require("dotenv").config()
 const express = require("express")
 const cors = require("cors")
 const db = require("./models/index")
+const path = require("path")
 
 const app = express()
 
 app.use(express.json())
-app.use(cors())
+
+app.use(cors({
+    origin: ["http://localhost:8000","http://localhost:5173"]
+}));
+
+app.use("/uploads", express.static("uploads"));
 
 const userRoute = require("./routes/user")
 const ForumPostRoute = require("./routes/forumpost")
